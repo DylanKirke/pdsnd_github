@@ -5,13 +5,13 @@
 Bikeshare
 
 ### Description
-Describe what your project is about and what it does
+A python script scans through a bikesharing company's data based on user input. It then outputs this data in a nice format for the anaylst to read.
 
 ### Files used
-bikeshare.py
-chicago.csv
-new_york_city.csv
-washington.csv
+- bikeshare.py
+- chicago.csv
+- new_york_city.csv
+- washington.csv
 
 ### Credits
 Udacity
