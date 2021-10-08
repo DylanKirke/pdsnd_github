@@ -104,7 +104,7 @@ def time_stats(df):
     # Display the most common start hour
     print('Most Popular Start Hour: {}'.format(df['hour'].mode()[0]))
 
-    print("\nThis took %s seconds." % (time.time() - start_time))
+    print("\nThis took %s seconds." % (time_since(start_time))
     print('-'*40)
 
 
@@ -124,7 +124,7 @@ def station_stats(df):
     popular_station_combo = (df['Start Station'] + ';' + df['End Station']).mode()
     print('The most popular combination of start and end stations is: {}'.format(popular_station_combo[0]))
 
-    print("\nThis took %s seconds." % (time.time() - start_time))
+    print("\nThis took %s seconds." % (time_since(start_time))
     print('-'*40)
 
 
@@ -140,7 +140,7 @@ def trip_duration_stats(df):
     # Display mean travel time
     print("Mean Tavel Time: {}".format(df["Trip Duration"].mean()))
     
-    print("\nThis took %s seconds." % (time.time() - start_time))
+    print("\nThis took %s seconds." % (time_since(start_time))
     print('-'*40)
 
 
@@ -169,7 +169,7 @@ def user_stats(df):
     else:
         print('There is no Birth data for this city')
 
-    print("\nThis took %s seconds." % (time.time() - start_time))
+    print("\nThis took %s seconds." % (time_since(start_time))
     print('-'*40)
 
     
@@ -182,6 +182,13 @@ def load_raw_data(df):
         print(df.iloc[start_loc:start_loc+5])
         start_loc += 5
         view_data = input("Do you wish to continue?: ").lower()
+
+def time_since(start_time):
+    """ Calculates the time between start_time and the time this function is called."""
+
+    return (time.time() - start_time)
+
+
 
 def main():
     while True:
